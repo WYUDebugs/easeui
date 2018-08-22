@@ -293,6 +293,9 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
     }
 
     protected void setUpView() {
+        //重要
+        ////
+        ///
         titleBar.setTitle(toChatUsername);
         if (chatType == EaseConstant.CHATTYPE_SINGLE) {
             // set title
@@ -302,9 +305,9 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
                     titleBar.setTitle(user.getNick());
                 }
             }
-            titleBar.setRightImageResource(R.drawable.ease_mm_title_remove);
+            titleBar.setRightImageResource(R.drawable.delete);
         } else {
-        	titleBar.setRightImageResource(R.drawable.ease_to_group_details_normal);
+        	titleBar.setRightImageResource(R.drawable.group);
             if (chatType == EaseConstant.CHATTYPE_GROUP) {
                 //group chat
                 EMGroup group = EMClient.getInstance().groupManager().getGroup(toChatUsername);
