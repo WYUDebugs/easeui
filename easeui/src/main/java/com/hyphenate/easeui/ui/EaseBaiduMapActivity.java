@@ -45,7 +45,7 @@ import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationConfiguration.LocationMode;
 import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.model.LatLng;
-import com.baidu.mapapi.utils.CoordinateConverter;
+//import com.baidu.mapapi.utils.CoordinateConverter;
 import com.hyphenate.easeui.R;
 
 public class EaseBaiduMapActivity extends EaseBaseActivity {
@@ -123,16 +123,16 @@ public class EaseBaiduMapActivity extends EaseBaseActivity {
 	private void showMap(double latitude, double longtitude, String address) {
 		sendButton.setVisibility(View.GONE);
 		LatLng llA = new LatLng(latitude, longtitude);
-		CoordinateConverter converter= new CoordinateConverter();
-		converter.coord(llA);
-		converter.from(CoordinateConverter.CoordType.COMMON);
-		LatLng convertLatLng = converter.convert();
-		OverlayOptions ooA = new MarkerOptions().position(convertLatLng).icon(BitmapDescriptorFactory
-				.fromResource(R.drawable.ease_icon_marka))
-				.zIndex(4).draggable(true);
-		mBaiduMap.addOverlay(ooA);
-		MapStatusUpdate u = MapStatusUpdateFactory.newLatLngZoom(convertLatLng, 17.0f);
-		mBaiduMap.animateMapStatus(u);
+//		CoordinateConverter converter= new CoordinateConverter();
+//		converter.coord(llA);
+//		converter.from(CoordinateConverter.CoordType.COMMON);
+//		LatLng convertLatLng = converter.convert();
+//		OverlayOptions ooA = new MarkerOptions().position(convertLatLng).icon(BitmapDescriptorFactory
+//				.fromResource(R.drawable.ease_icon_marka))
+//				.zIndex(4).draggable(true);
+//		mBaiduMap.addOverlay(ooA);
+//		MapStatusUpdate u = MapStatusUpdateFactory.newLatLngZoom(convertLatLng, 17.0f);
+//		mBaiduMap.animateMapStatus(u);
 	}
 
 	private void showMapWithLocationClient() {
@@ -226,16 +226,16 @@ public class EaseBaiduMapActivity extends EaseBaseActivity {
 			lastLocation = location;
 			mBaiduMap.clear();
 			LatLng llA = new LatLng(lastLocation.getLatitude(), lastLocation.getLongitude());
-			CoordinateConverter converter= new CoordinateConverter();
-			converter.coord(llA);
-			converter.from(CoordinateConverter.CoordType.COMMON);
-			LatLng convertLatLng = converter.convert();
-			OverlayOptions ooA = new MarkerOptions().position(convertLatLng).icon(BitmapDescriptorFactory
-					.fromResource(R.drawable.ease_icon_marka))
-					.zIndex(4).draggable(true);
-			mBaiduMap.addOverlay(ooA);
-			MapStatusUpdate u = MapStatusUpdateFactory.newLatLngZoom(convertLatLng, 17.0f);
-			mBaiduMap.animateMapStatus(u);
+//			CoordinateConverter converter= new CoordinateConverter();
+//			converter.coord(llA);
+//			converter.from(CoordinateConverter.CoordType.COMMON);
+//			LatLng convertLatLng = converter.convert();
+//			OverlayOptions ooA = new MarkerOptions().position(convertLatLng).icon(BitmapDescriptorFactory
+//					.fromResource(R.drawable.ease_icon_marka))
+//					.zIndex(4).draggable(true);
+//			mBaiduMap.addOverlay(ooA);
+//			MapStatusUpdate u = MapStatusUpdateFactory.newLatLngZoom(convertLatLng, 17.0f);
+//			mBaiduMap.animateMapStatus(u);
 		}
 
 		public void onReceivePoi(BDLocation poiLocation) {
