@@ -39,14 +39,14 @@ public class EaseUserUtils {
     	EaseUser user = getUserInfo(username);
         if(user != null && user.getAvatar() != null){
             try {
-                int avatarResId = Integer.parseInt(user.getAvatar());
-                Glide.with(context).load(avatarResId).into(imageView);
+//                int avatarResId = Integer.parseInt(user.getAvatar());
+                Glide.with(context).load(user.getAvatar()).placeholder(R.drawable.em_default_avatar).error(R.drawable.em_default_avatar).into(imageView);
             } catch (Exception e) {
                 //use default avatar
-                Glide.with(context).load(user.getAvatar()).diskCacheStrategy(DiskCacheStrategy.ALL).placeholder(R.drawable.ease_default_avatar).into(imageView);
+                Glide.with(context).load(user.getAvatar()).diskCacheStrategy(DiskCacheStrategy.ALL).placeholder(R.drawable.em_default_avatar).into(imageView);
             }
         }else{
-            Glide.with(context).load(R.drawable.ease_default_avatar).into(imageView);
+            Glide.with(context).load(R.drawable.em_default_avatar).into(imageView);
         }
     }
     
@@ -55,12 +55,27 @@ public class EaseUserUtils {
      */
     public static void setUserNick(String username,TextView textView){
         if(textView != null){
-        	EaseUser user = getUserInfo(username);
-        	if(user != null && user.getNick() != null){
-        		textView.setText(user.getNick());
-        	}else{
-        		textView.setText(username);
-        	}
+            EaseUser user = getUserInfo(username);
+            if(user != null && user.getNick() != null){
+                textView.setText(user.getNick());
+            }else{
+                textView.setText(username);
+            }
+        }
+    }
+
+    public static void setUserNick(String username,String nickrname){
+        EaseUser user = getUserInfo(username);
+        if(user != null ){
+            user.setNickname(nickrname);
+        }
+
+    }
+
+    public static void setUserAvatar(String username, String url){
+        EaseUser user = getUserInfo(username);
+        if(user != null ){
+            user.setAvatar(url);
         }
     }
     

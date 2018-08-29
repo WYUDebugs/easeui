@@ -101,6 +101,7 @@ public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements Sectio
 
         EaseUserUtils.setUserNick(username, holder.nameView);
         EaseUserUtils.setUserAvatar(getContext(), username, holder.avatar);
+
         
        
         if(primaryColor != 0)
@@ -114,7 +115,7 @@ public class EaseContactAdapter extends ArrayAdapter<EaseUser> implements Sectio
         
         return convertView;
     }
-    
+
     @Override
     public EaseUser getItem(int position) {
         return super.getItem(position);
