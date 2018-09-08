@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -40,6 +41,7 @@ import java.util.Map;
  */
 public class EaseConversationListFragment extends EaseBaseFragment{
 	private final static int MSG_REFRESH = 2;
+    private final static int MSG_ONLYUPDATE=3;
     protected EditText query;
     protected ImageButton clearSearch;
     protected boolean hidden;
@@ -83,8 +85,8 @@ public class EaseConversationListFragment extends EaseBaseFragment{
     @Override
     protected void setUpView() {
         conversationList.addAll(loadConversationList());
-        conversationListView.init(conversationList);
-        
+//        conversationListView.init(conversationList);
+        Log.e("zxd","父类");
         if(listItemClickListener != null){
             conversationListView.setOnItemClickListener(new OnItemClickListener() {
 
@@ -169,6 +171,9 @@ public class EaseConversationListFragment extends EaseBaseFragment{
 	                conversationListView.refresh();
 	                break;
 	            }
+                case MSG_ONLYUPDATE:
+                    conversationListView.refresh();
+                    break;
             default:
                 break;
             }
@@ -198,7 +203,12 @@ public class EaseConversationListFragment extends EaseBaseFragment{
     		handler.sendEmptyMessage(MSG_REFRESH);
     	}
     }
-    
+
+    public void update(){
+        if(!handler.hasMessages(MSG_ONLYUPDATE)){
+            handler.sendEmptyMessage(MSG_ONLYUPDATE);
+        }
+    }
     /**
      * load conversation list
      * 

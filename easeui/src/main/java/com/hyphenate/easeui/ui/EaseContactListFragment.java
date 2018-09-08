@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -102,8 +103,8 @@ public class EaseContactListFragment extends EaseBaseFragment {
         contactList = new ArrayList<EaseUser>();
         getContactList();
         //init list
-        contactListLayout.init(contactList);
-        
+//        contactListLayout.init(contactList);
+        Log.d("zxd","父类完成");
         if(listItemClickListener != null){
             listView.setOnItemClickListener(new OnItemClickListener() {
     
@@ -269,7 +270,7 @@ public class EaseContactListFragment extends EaseBaseFragment {
 
             }
         });
-
+        Log.d("zxd","父类");
     }
     
     
