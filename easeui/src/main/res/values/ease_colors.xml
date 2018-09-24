@@ -51,4 +51,5 @@
     <color name="itemNorColor">#FFFEFFFF</color>
     <!--列表点击颜色-->
     <color name="itemPreColor">#EEEEEE</color>
+    <color name="sidebg">#00FFFFFF</color>
 </resources>

@@ -1,6 +1,7 @@
 package com.hyphenate.easeui.ui;
 
 import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
@@ -28,6 +29,7 @@ import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMConversation;
 import com.hyphenate.easeui.R;
 import com.hyphenate.easeui.widget.EaseConversationList;
+import com.hyphenate.easeui.widget.EaseTitleBar;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -50,7 +52,6 @@ public class EaseConversationListFragment extends EaseBaseFragment{
     protected FrameLayout errorItemContainer;
 
     protected boolean isConflict;
-    
     protected EMConversationListener convListener = new EMConversationListener(){
 
 		@Override
@@ -81,7 +82,9 @@ public class EaseConversationListFragment extends EaseBaseFragment{
         clearSearch = (ImageButton) getView().findViewById(R.id.search_clear);
         errorItemContainer = (FrameLayout) getView().findViewById(R.id.fl_error_item);
     }
-    
+
+
+
     @Override
     protected void setUpView() {
         conversationList.addAll(loadConversationList());

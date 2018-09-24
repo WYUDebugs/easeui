@@ -40,6 +40,7 @@ import com.hyphenate.easeui.R;
 import com.hyphenate.easeui.domain.EaseUser;
 import com.hyphenate.easeui.utils.EaseCommonUtils;
 import com.hyphenate.easeui.widget.EaseContactList;
+import com.hyphenate.easeui.widget.EaseTitleBar;
 import com.hyphenate.exceptions.HyphenateException;
 
 import java.util.ArrayList;
@@ -67,7 +68,6 @@ public class EaseContactListFragment extends EaseBaseFragment {
     protected EaseContactList contactListLayout;
     protected boolean isConflict;
     protected FrameLayout contentContainer;
-    
     private Map<String, EaseUser> contactsMap;
 
     
@@ -83,7 +83,6 @@ public class EaseContactListFragment extends EaseBaseFragment {
             return;
         super.onActivityCreated(savedInstanceState);
     }
-
     @Override
     protected void initView() {
         contentContainer = (FrameLayout) getView().findViewById(R.id.content_container);

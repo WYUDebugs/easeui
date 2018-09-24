@@ -3,13 +3,17 @@ package com.hyphenate.easeui.widget;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.hyphenate.easeui.R;
+import com.hyphenate.easeui.utils.GlideCircleTransform;
 
 /**
  * title bar
@@ -112,5 +116,12 @@ public class EaseTitleBar extends RelativeLayout{
     
     public RelativeLayout getRightLayout(){
         return rightLayout;
+    }
+
+    public void setHead(String uri){
+
+        Glide.with(getContext()).load(uri).centerCrop().transform(new GlideCircleTransform(getContext())).into(leftImage);
+//        Picasso.with(UserProfileActivity.this).load(APPConfig.img_url + resultDto.getData().getHeadimage())
+//                .placeholder(R.mipmap.icon_head).error(R.mipmap.icon_head).into(head);
     }
 }
