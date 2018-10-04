@@ -304,7 +304,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
                     titleBar.setTitle(user.getNick());
                 }
             }
-            titleBar.setRightImageResource(R.drawable.delete);
+//            titleBar.setRightImageResource(R.drawable.delete);
         } else {
         	titleBar.setRightImageResource(R.drawable.group);
             if (chatType == EaseConstant.CHATTYPE_GROUP) {
@@ -339,7 +339,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
             @Override
             public void onClick(View v) {
                 if (chatType == EaseConstant.CHATTYPE_SINGLE) {
-                    emptyHistory();
+//                    emptyHistory();
                 } else {
                     toGroupDetails();
                 }

@@ -78,5 +78,30 @@ public class EaseUserUtils {
             user.setAvatar(url);
         }
     }
-    
+
+    public static void setUserNick(String username,TextView textView,String nickrname){
+        if(textView != null){
+            EaseUser user = getUserInfo(username);
+            if(user != null && user.getNick() != null){
+                textView.setText(user.getNick());
+            }else{
+                textView.setText(username);
+            }
+        }
+    }
+
+    public static void setUserAvatar(Context context, String username, ImageView imageView,String url){
+        EaseUser user = getUserInfo(username);
+        if(user != null && user.getAvatar() != null){
+            try {
+//                int avatarResId = Integer.parseInt(user.getAvatar());
+                Glide.with(context).load(user.getAvatar()).placeholder(R.drawable.em_default_avatar).error(R.drawable.em_default_avatar).into(imageView);
+            } catch (Exception e) {
+                //use default avatar
+                Glide.with(context).load(user.getAvatar()).diskCacheStrategy(DiskCacheStrategy.ALL).placeholder(R.drawable.em_default_avatar).into(imageView);
+            }
+        }else{
+            Glide.with(context).load(R.drawable.em_default_avatar).into(imageView);
+        }
+    }
 }

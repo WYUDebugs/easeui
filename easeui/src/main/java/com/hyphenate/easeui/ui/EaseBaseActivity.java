@@ -19,6 +19,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
@@ -68,6 +69,7 @@ public class EaseBaseActivity extends FragmentActivity {
      * @param view
      */
     public void back(View view) {
+        Log.d("zxd111","退出");
         finish();
     }
 }
