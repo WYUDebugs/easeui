@@ -120,7 +120,7 @@ public class EaseTitleBar extends RelativeLayout{
 
     public void setHead(String uri){
 
-        Glide.with(getContext()).load(uri).centerCrop().transform(new GlideCircleTransform(getContext())).into(leftImage);
+//        Glide.with(getContext()).load(uri).centerCrop().transform(new GlideCircleTransform(getContext())).into(leftImage);
 //        Picasso.with(UserProfileActivity.this).load(APPConfig.img_url + resultDto.getData().getHeadimage())
 //                .placeholder(R.mipmap.icon_head).error(R.mipmap.icon_head).into(head);
     }
