@@ -254,23 +254,23 @@ public class EaseContactListFragment extends EaseBaseFragment {
         }
 
         // sorting
-        Collections.sort(contactList, new Comparator<EaseUser>() {
-
-            @Override
-            public int compare(EaseUser lhs, EaseUser rhs) {
-                if(lhs.getInitialLetter().equals(rhs.getInitialLetter())){
-                    return lhs.getNick().compareTo(rhs.getNick());
-                }else{
-                    if("#".equals(lhs.getInitialLetter())){
-                        return 1;
-                    }else if("#".equals(rhs.getInitialLetter())){
-                        return -1;
-                    }
-                    return lhs.getInitialLetter().compareTo(rhs.getInitialLetter());
-                }
-
-            }
-        });
+//        Collections.sort(contactList, new Comparator<EaseUser>() {
+//
+//            @Override
+//            public int compare(EaseUser lhs, EaseUser rhs) {
+//                if(lhs.getInitialLetter().equals(rhs.getInitialLetter())){
+//                    return lhs.getNick().compareTo(rhs.getNick());
+//                }else{
+//                    if("#".equals(lhs.getInitialLetter())){
+//                        return 1;
+//                    }else if("#".equals(rhs.getInitialLetter())){
+//                        return -1;
+//                    }
+//                    return lhs.getInitialLetter().compareTo(rhs.getInitialLetter());
+//                }
+//
+//            }
+//        });
         Log.d("zxd","父类");
     }
     

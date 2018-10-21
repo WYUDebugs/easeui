@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ListView;
@@ -33,6 +34,7 @@ public class EaseContactList extends RelativeLayout {
     protected Drawable initialLetterBg;
     
     static final int MSG_UPDATE_LIST = 0;
+    static final int MSG_UPDATE = 1;
     
     Handler handler = new Handler() {
         
@@ -46,6 +48,12 @@ public class EaseContactList extends RelativeLayout {
                 	adapter.notifyDataSetChanged();	
                 }
                 break;
+                case MSG_UPDATE:
+                    if(adapter != null){
+                        Log.d("121","1211");
+                        adapter.notifyDataSetChanged();
+                    }
+                    break;
             default:
                 break;
             }
@@ -124,6 +132,11 @@ public class EaseContactList extends RelativeLayout {
         }else{
             sidebar.setVisibility(View.GONE);
         }
+    }
+
+    public void upData(){
+        Message msg = handler.obtainMessage(MSG_UPDATE);
+        handler.sendMessage(msg);
     }
 
 
